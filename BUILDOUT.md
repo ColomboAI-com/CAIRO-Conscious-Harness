@@ -12,6 +12,18 @@ Implemented first vertical slice:
 - Frontend: sidebar entry for Conscious Harness.
 - Frontend: Command Center page showing runtime loop, model routing policy, system cards, Hermes-style Kanban visibility, and 72-hour automation track.
 
+Implemented second backend integration slice:
+
+- Fixed runtime serialization for slot-based Conscious Harness dataclasses.
+- Added ODIL conversion contract at `/api/v1/conscious-harness/odil/convert`.
+- Extended ODIL ingest to track source URI, MIME type, markdown preview, markdown length, converter, and estimated token savings.
+- Added Nango-style connect-session contract at `/api/v1/conscious-harness/nango/connect`.
+- Added Nango connection registry and webhook intake endpoints:
+  - `GET /api/v1/conscious-harness/nango/connections`
+  - `POST /api/v1/conscious-harness/nango/connections`
+  - `POST /api/v1/conscious-harness/nango/webhook`
+- Added webhook events into the runtime activity feed.
+
 ## Swarm Findings
 
 ### Frontend
@@ -77,6 +89,12 @@ Borrow:
 - Optional MCP mode: `python -m markitdown_mcp --http --host 127.0.0.1 --port 3001`.
 - Plugin support behind explicit feature flags.
 
+Current implementation status:
+
+- ODIL service uses a local software-normalizer path for provided content.
+- If `markitdown` is installed and `source_uri` is provided, the service attempts `MarkItDown().convert(source_uri).markdown`.
+- If MarkItDown is unavailable, conversion gracefully falls back to a source-headed markdown envelope.
+
 ### Nango
 
 Borrow:
@@ -86,6 +104,12 @@ Borrow:
 - Sync ergonomics: checkpoints, batch saves, model-backed records.
 - Sandboxed runner separation for sync, action, webhook, and event handlers.
 - Webhook delivery discipline: signatures, retry policy, circuit breaker, and stable JSON.
+
+Current implementation status:
+
+- Connect-session creation is modeled locally with short-lived `session_token`, `connect_link`, end user, organization, allowed integrations, tags, expiry, and status.
+- Connections can be recorded into the Conscious Harness capability graph.
+- Webhooks are accepted into a runtime event log for later EIL processing.
 
 ## Automation Strategy
 
@@ -98,4 +122,3 @@ Use multi-agent execution for bounded slices with disjoint write scopes:
 - Verification worker: targeted backend and frontend test/lint passes.
 
 The environment still requires user approval for network, install, push, and sandbox-escape operations. Batch approvals by command category whenever possible.
-
