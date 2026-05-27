@@ -8,9 +8,11 @@ const modules = [
   { label: "Command Center", color: "#27c7d8" },
   { label: "Runtime Core", color: "#42c77b" },
   { label: "Efficiency Engine", color: "#f5b841" },
-  { label: "Heartbeat Engine", color: "#f26f63" },
-  { label: "Meta-Harness", color: "#7257ff" },
-  { label: "Governance", color: "#8ee7f0" }
+  { label: "ODIL", color: "#f26f63" },
+  { label: "DCRS + Nango", color: "#7257ff" },
+  { label: "Long-Horizon Swarms", color: "#8ee7f0" },
+  { label: "Meta-Harness", color: "#c4f26f" },
+  { label: "Governance", color: "#ff9f7a" }
 ];
 
 let tick = 0;
