@@ -103,6 +103,15 @@ Implemented tenth ACE-linked Command Center slice:
 - Harness run cards now display linked ACE task IDs when present.
 - The Command Center can now exercise standalone harness runs and ACE-attached harness runs from the same surface.
 
+Implemented eleventh ODIL persistence slice:
+
+- Added persistent ODIL document model and Alembic migration `043_conscious_harness_odil_documents`.
+- ODIL ingest and convert endpoints now persist normalized document records when a DB session is available.
+- Added `GET /api/v1/conscious-harness/odil/documents` for document history.
+- ODIL document lookup now reads persisted records first and falls back to in-memory state.
+- Command Center now displays persisted ODIL documents with converter, markdown size, workflows, entities, and token savings.
+- Added optional SQLAlchemy-backed coverage for ODIL document persistence across service restarts.
+
 ## Swarm Findings
 
 ### Frontend
