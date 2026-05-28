@@ -274,6 +274,13 @@ Implemented thirty-first production launch profile slice:
 - Command Center Deployment Preflight now displays launch profile and mode tags.
 - Added backend service coverage for production-mode blockers when required launch controls/secrets are missing.
 
+Implemented thirty-second deployment manifest slice:
+
+- Added `GET /api/v1/conscious-harness/launch/manifest`.
+- Deployment manifest now exports launch profile, preflight status, evidence id, required environment variables, required migrations, services, scheduler settings, launch commands, and markdown handoff content.
+- Command Center Deployment Preflight now includes an Export Manifest control.
+- Added backend service coverage for manifest env vars, migrations, services, commands, profile, and markdown content.
+
 ## Swarm Findings
 
 ### Frontend
