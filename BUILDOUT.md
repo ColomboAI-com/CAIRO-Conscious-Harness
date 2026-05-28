@@ -187,6 +187,16 @@ Implemented twentieth recommendation heartbeat slice:
 - Command Center can now trigger a recommendation heartbeat and display recent heartbeat outcomes.
 - Added optional SQLAlchemy-backed coverage for persisted heartbeat snapshots.
 
+Implemented twenty-first scheduled heartbeat slice:
+
+- Added configurable Conscious Harness heartbeat scheduler settings:
+  - `CONSCIOUS_HARNESS_HEARTBEAT_ENABLED`
+  - `CONSCIOUS_HARNESS_HEARTBEAT_INTERVAL_SECONDS`
+  - `CONSCIOUS_HARNESS_HEARTBEAT_STARTUP_DELAY_SECONDS`
+- Added background recommendation heartbeat loop using the backend BG DB session pool.
+- Wired the loop into FastAPI startup behind the enable flag.
+- Added scheduler sweep coverage to verify scheduled heartbeats persist snapshots.
+
 ## Swarm Findings
 
 ### Frontend
