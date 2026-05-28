@@ -321,6 +321,15 @@ Implemented thirty-seventh launch drill runner slice:
 - Command Center Release Candidate Gate now exposes a Run Drill control and recent drill history.
 - Added backend service coverage for in-memory launch drills and DB-backed drill persistence.
 
+Implemented thirty-eighth scheduled launch drill slice:
+
+- Added an autonomous launch drill scheduler loop beside the recommendation heartbeat loop.
+- Added `GET /api/v1/conscious-harness/launch/drills/scheduler/status` and `POST /api/v1/conscious-harness/launch/drills/scheduler/config`.
+- Launch drill scheduler config now persists in the existing scheduler config table under the `launch_drill` key.
+- Launch drill sweeps now run as `launch-drill-scheduler` and persist full drill reports.
+- Command Center Release Candidate Gate now exposes launch drill scheduler status, cadence inputs, and enable/disable controls.
+- Added backend service coverage for launch drill scheduler status, config persistence, and scheduled sweep persistence.
+
 ## Swarm Findings
 
 ### Frontend
