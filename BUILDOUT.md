@@ -266,6 +266,14 @@ Implemented thirtieth actionable preflight slice:
 - Command Center Deployment Preflight cards now expose Execute/Review controls.
 - Added backend service coverage for executing a safe preflight fix.
 
+Implemented thirty-first production launch profile slice:
+
+- Added `GET /api/v1/conscious-harness/launch/profile`.
+- Launch profile now derives local/staging/production mode from `CONSCIOUS_HARNESS_LAUNCH_PROFILE` and `APP_ENV`.
+- Deployment preflight now includes profile metadata and promotes missing production secrets, disabled scheduler, missing governance, and missing harness validation from warnings to blockers in production mode.
+- Command Center Deployment Preflight now displays launch profile and mode tags.
+- Added backend service coverage for production-mode blockers when required launch controls/secrets are missing.
+
 ## Swarm Findings
 
 ### Frontend
