@@ -121,6 +121,15 @@ Implemented twelfth Nango persistence slice:
 - Command Center now displays persisted Nango connections with integration, connection id, provider config, and status.
 - Added optional SQLAlchemy-backed coverage for Nango connection and webhook persistence.
 
+Implemented thirteenth DCRS capability persistence slice:
+
+- Added persistent Conscious Harness capability model and Alembic migration `045_conscious_harness_capabilities`.
+- DCRS discover/list endpoints now persist and read capability records when DB is available.
+- Nango connection recording now updates the persistent capability graph with connected integration capabilities.
+- Overview now includes persisted available/connected capability counts.
+- Command Center now loads the capability graph, displays DCRS/ODIL/Nango capabilities, and can trigger a DCRS discovery action.
+- Added optional SQLAlchemy-backed coverage for capability persistence across service restarts.
+
 ## Swarm Findings
 
 ### Frontend
