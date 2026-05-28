@@ -213,6 +213,13 @@ Implemented twenty-third operator scheduler configuration slice:
 - Command Center can enable/disable recommendation heartbeats and set interval/startup delay.
 - Added optional SQLAlchemy-backed coverage for persisted scheduler configuration.
 
+Implemented twenty-fourth readiness checklist slice:
+
+- Added `GET /api/v1/conscious-harness/readiness`.
+- Derived buildout readiness from persisted runtime state, ODIL documents, capability graph, governance, execution memory, recommendations, scheduler state, and harness runs.
+- Command Center now displays a Buildout Readiness panel with score, status, and per-area checks.
+- Added backend service coverage for readiness report shape and status values.
+
 ## Swarm Findings
 
 ### Frontend
