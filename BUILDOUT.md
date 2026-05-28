@@ -77,6 +77,16 @@ Implemented seventh operator visibility slice:
 - Added a Harness Runs panel with run status, capability, risk level, and a complete-run action.
 - Changed the approval control from auto-approve to queue-first operator review.
 
+Implemented eighth persistence foundation slice:
+
+- Added SQLAlchemy models for Conscious Harness runs, approvals, and benchmarks.
+- Added Alembic migration `041_conscious_harness_persistence`.
+- Registered Conscious Harness models with backend database initialization.
+- Harness run, approval, and benchmark APIs now persist to DB when a session is available.
+- List/status/decision endpoints read persisted state first and fall back to in-memory state.
+- Overview now includes persisted pending approval and active harness run counts.
+- Added restart-style service coverage for persisted run and approval state, skipped only when local SQLAlchemy is unavailable.
+
 ## Swarm Findings
 
 ### Frontend
