@@ -156,6 +156,14 @@ Implemented sixteenth execution memory Command Center slice:
 - Added a `Create LHTK Checkpoint` action that captures task state, active run count, approval pressure, sharpness, and entropy.
 - Added LHTK Checkpoints and Security Audit panels for operator visibility.
 
+Implemented seventeenth proactive recommendations slice:
+
+- Added `GET /api/v1/conscious-harness/recommendations`.
+- Recommendation synthesis now inspects persisted overview, approvals, harness runs, capabilities, security events, tasks, and ODIL documents.
+- Recommendations rank approval review, security audit review, LHTK checkpointing, goal seeding, GitHub connection, ODIL grounding, and recovery swarm work.
+- Command Center now displays ranked Runtime Recommendations as operator-ready next actions.
+- Added backend service coverage for recommendation priority and action-type selection.
+
 ## Swarm Findings
 
 ### Frontend
