@@ -204,6 +204,15 @@ Implemented twenty-second scheduler status visibility slice:
 - Command Center now displays scheduler status, cadence, startup delay, and heartbeat count in the Runtime Recommendations panel.
 - Added backend service coverage for scheduler status shape.
 
+Implemented twenty-third operator scheduler configuration slice:
+
+- Added persistent Conscious Harness scheduler config model and Alembic migration `050_conscious_harness_scheduler_config`.
+- Added `POST /api/v1/conscious-harness/recommendations/scheduler/config`.
+- Scheduler status now merges persisted operator overrides with environment defaults.
+- Background heartbeat manager now starts at backend startup and idles/runs based on persisted scheduler config.
+- Command Center can enable/disable recommendation heartbeats and set interval/startup delay.
+- Added optional SQLAlchemy-backed coverage for persisted scheduler configuration.
+
 ## Swarm Findings
 
 ### Frontend
