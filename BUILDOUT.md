@@ -375,6 +375,14 @@ Implemented forty-third launch validation audit-history slice:
 - Command Center Release Candidate Gate now shows recent validation history cards with decision, blockers, warnings, drill linkage, and timestamp.
 - Added backend service coverage for persisted launch validation history across service restarts.
 
+Implemented forty-fourth launch audit export slice:
+
+- Added `GET /api/v1/conscious-harness/launch/audit-package` for exportable launch audit packages.
+- Launch audit packages bundle latest validation, validation history, launch evidence, deployment manifest, release candidate gate, preflight, launch drills, adapter readiness, and smoke-test history.
+- Audit packages include summary counters and markdown formatted for compliance review or release handoff.
+- Command Center Release Candidate Gate now exposes Export Audit and copies the package JSON when clipboard access is available.
+- Added backend service coverage for launch audit package export context.
+
 ## Swarm Findings
 
 ### Frontend
