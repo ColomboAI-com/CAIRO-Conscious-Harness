@@ -415,6 +415,14 @@ Implemented forty-eighth environment validation slice:
 - Command Center Production Health now displays environment status, database backend, required secret readiness, and blocker count.
 - Added backend service coverage for environment validation reports.
 
+Implemented forty-ninth integration-expansion readiness slice:
+
+- Added a metadata-only integration readiness contract for Codex-like live preview surfaces and CopilotKit-style generative UI paths.
+- Modeled Microsoft SkillOpt-style self-evolving skill evaluation as a governed harness capability with benchmark and rollback next actions.
+- Added security and self-healing readiness entries for Shannon, Trivy, PentAGI, and Redamon.
+- Kept the security slice sandbox/staging/approval gated; no scanner or pentest tool runs synchronously from the request path.
+- Surfaced the readiness groups, live/reference counts, sandbox-required count, and warnings in the Command Center Integration Horizon panel.
+
 ## Swarm Findings
 
 ### Frontend
@@ -501,6 +509,15 @@ Current implementation status:
 - Connect-session creation is modeled locally with short-lived `session_token`, `connect_link`, end user, organization, allowed integrations, tags, expiry, and status.
 - Connections can be recorded into the Conscious Harness capability graph.
 - Webhooks are accepted into a runtime event log for later EIL processing.
+
+### Integration Expansion
+
+Current registry-first expansion capabilities:
+
+- Codex-like preview: governed live preview and artifact inspection for harness runs.
+- CopilotKit generative UI: structured UI generation paths that remain auditable and reversible.
+- Microsoft SkillOpt: self-evolving skill evaluation with approval gates, benchmarks, and rollback.
+- Shannon, Trivy, PentAGI, Redamon: security scanning, adversarial validation, and self-healing adapters routed through the existing risk, smoke-test, and launch audit surfaces.
 
 ## Automation Strategy
 

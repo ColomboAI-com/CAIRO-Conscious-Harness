@@ -64,6 +64,7 @@ The CAIRO Conscious Harness build-out is now in the final production-hardening l
 - Goal, task, swarm, approval, security, ODIL, Nango, DCRS capability, LHTK checkpoint, harness-run, and recommendation flows.
 - ACE runtime linkage for Autonomous Companies tasks and operators.
 - Codex, Hermes, ACE, Nango, and MarkItDown adapter readiness reporting.
+- Integration readiness expansion for Codex-like preview, CopilotKit generative UI, Microsoft SkillOpt self-evolving skills, and Shannon/Trivy/PentAGI/Redamon security and self-healing adapters.
 - Recommendation heartbeat scheduler and launch drill scheduler controls.
 - Launch runbook, launch actions, execution audit, evidence package, deployment preflight, deployment manifest, release candidate gate, launch drills, launch validation, validation history, launch audit export, production health, and production smoke checks.
 
@@ -80,9 +81,9 @@ The remaining work before production completion is environment validation: run t
 | Operational Connectivity | DCRS, Nango, MCP-RAG, Scraping2Tools, SiteMap2Tools, and EIL |
 | Operational Document Intelligence | MarkItDown normalization, workflow extraction, entity extraction, knowledge compression, and memory graph writing |
 | Long-Horizon Execution | CSIP, Swarm Regeneration, Operational DNA, EMP, and LHTK |
-| Meta-Harness Layer | Hermes, Codex-style agents, Claude Code, OpenClaw, browser agents, and custom harness SDK |
+| Meta-Harness Layer | Hermes, Codex-style agents and preview, CopilotKit generative UI, Claude Code, OpenClaw, SkillOpt-style evolving skills, browser agents, and custom harness SDK |
 | Autonomous Companies Layer | ACDL, UAPE, Operator Runtime, Company Wiki, Standing Goals, Marketplace, and Company Workspaces |
-| Governance + Security | Risk engine, approval gates, permissions, audit logs, kill switch, policy engine, and prompt firewall |
+| Governance + Security | Risk engine, approval gates, permissions, audit logs, kill switch, policy engine, prompt firewall, Shannon, Trivy, PentAGI, Redamon, and self-healing adapters |
 
 ## Model Routing
 
@@ -241,6 +242,17 @@ GET  /api/v1/conscious-harness/launch/adapters
 POST /api/v1/conscious-harness/launch/adapters/smoke-tests
 GET  /api/v1/conscious-harness/launch/adapters/smoke-tests
 ```
+
+## Integration Readiness Expansion
+
+The integration-expansion slice keeps new adapters registry-first and approval-gated before runtime execution:
+
+| Adapter | Planned Role |
+| --- | --- |
+| Codex-like preview | Governed live preview and artifact inspection for harness runs |
+| CopilotKit generative UI | Auditable generative UI paths for operator-facing workflows |
+| Microsoft SkillOpt | Self-evolving skill evaluation with benchmarks, approval gates, and rollback |
+| Shannon, Trivy, PentAGI, Redamon | Security scanning, adversarial validation, and self-healing coverage through existing risk, smoke-test, validation, and audit surfaces |
 
 ## Conscious Home Folder
 
