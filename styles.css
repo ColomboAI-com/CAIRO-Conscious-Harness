@@ -296,7 +296,8 @@ p {
 .architecture-grid,
 .surface-grid,
 .systems-grid,
-.service-grid {
+.service-grid,
+.status-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
@@ -306,7 +307,8 @@ p {
 .mode-grid article,
 .surface-grid article,
 .systems-grid article,
-.service-grid article {
+.service-grid article,
+.status-grid article {
   padding: 26px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -319,10 +321,25 @@ p {
 .layer-list p,
 .surface-grid p,
 .systems-grid p,
-.service-grid p {
+.service-grid p,
+.status-grid p {
   margin-bottom: 0;
   font-size: 15px;
   line-height: 1.55;
+}
+
+.status-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.status-grid span {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: var(--cyan);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
 
 .product-surface {
@@ -492,6 +509,7 @@ p {
   .surface-grid,
   .systems-grid,
   .service-grid,
+  .status-grid,
   .timeline,
   .mode-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -513,6 +531,7 @@ p {
   .surface-grid,
   .systems-grid,
   .service-grid,
+  .status-grid,
   .timeline,
   .mode-grid {
     grid-template-columns: 1fr;

@@ -17,6 +17,7 @@
         <a href="#architecture">Architecture</a>
         <a href="#systems">Systems</a>
         <a href="#services">Services</a>
+        <a href="#status">Status</a>
         <a href="#mvp">72-Hour MVP</a>
         <a class="github-link" href="https://github.com/ColomboAI-com/CAIRO-Conscious-Harness">GitHub</a>
       </nav>
@@ -76,6 +77,38 @@
         <p>
           Most AI products use prompts as the operating system and call models constantly. CAIRO reverses the order: deterministic software, workflows, memory, cached intelligence, local models, and ColomboAI-MC-1 run before frontier escalation.
         </p>
+      </section>
+
+      <section class="section" id="status">
+        <div class="section-heading">
+          <p class="section-kicker">Build status</p>
+          <h2>Final production-hardening lane.</h2>
+          <p>
+            The current build has moved beyond architecture into concrete backend contracts and Command Center controls for launch readiness, validation, auditability, health, and smoke testing.
+          </p>
+        </div>
+        <div class="status-grid">
+          <article>
+            <span>Built</span>
+            <h3>Launch Control</h3>
+            <p>Runbook, evidence package, deployment preflight, manifest, release candidate gate, launch drills, validation, validation history, and audit export.</p>
+          </article>
+          <article>
+            <span>Built</span>
+            <h3>Production Health</h3>
+            <p>Read-only health snapshot, connector modes, scheduler state, launch validation decision, blockers, warnings, and production smoke contracts.</p>
+          </article>
+          <article>
+            <span>Built</span>
+            <h3>Operational Adapters</h3>
+            <p>Nango, MarkItDown, Codex, Hermes, and ACE readiness with local, reference, configured, linked, simulated, and live-mode reporting.</p>
+          </article>
+          <article>
+            <span>Remaining</span>
+            <h3>Environment Validation</h3>
+            <p>Run migrations and smoke contracts against the deployed database, live credentials, real OAuth/webhook settings, and production runtime profile.</p>
+          </article>
+        </div>
       </section>
 
       <section class="section product-surface">
@@ -234,6 +267,8 @@
           <article><strong>DCRS + Nango</strong><p><code>/dcrs/discover</code>, <code>/dcrs/capabilities</code>, <code>/nango/connect</code>, <code>/nango/sync</code>, <code>/nango/webhook</code></p></article>
           <article><strong>Meta-Harness</strong><p><code>/harness/register</code>, <code>/harness/list</code>, <code>/harness/:id/run</code>, <code>/harness/:id/benchmark</code></p></article>
           <article><strong>Security</strong><p><code>/security/risk</code>, <code>/security/approve</code>, <code>/security/deny</code>, <code>/security/kill</code>, <code>/security/audit</code></p></article>
+          <article><strong>Launch Control</strong><p><code>/health</code>, <code>/health/smoke</code>, <code>/launch/preflight</code>, <code>/launch/release-candidate</code>, <code>/launch/validation</code>, <code>/launch/audit-package</code></p></article>
+          <article><strong>Adapter Readiness</strong><p><code>/launch/adapters</code>, <code>/launch/adapters/smoke-tests</code>, <code>/launch/drills</code>, <code>/launch/drills/scheduler/status</code></p></article>
         </div>
       </section>
 

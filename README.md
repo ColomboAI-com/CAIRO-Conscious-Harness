@@ -55,6 +55,20 @@ CAIRO Conscious Harness is desktop-first, with CLI and file-based configuration 
 | Terminal / CLI | `cairo app`, `cairo run`, `cairo goal`, `cairo task`, `cairo swarm`, `cairo harness`, `cairo dcrs`, `cairo nango`, `cairo memory`, `cairo efficiency`, `cairo security`, `cairo config` |
 | Configuration | Global `~/.cairo-conscious/config/*.yaml` plus project-level `project/.cairo/*.yaml` |
 
+## Current Build Status
+
+The CAIRO Conscious Harness build-out is now in the final production-hardening lane. The active implementation includes:
+
+- Command Center runtime surface in `cairo-ui`.
+- Conscious Harness service layer in `cairo-backend`.
+- Goal, task, swarm, approval, security, ODIL, Nango, DCRS capability, LHTK checkpoint, harness-run, and recommendation flows.
+- ACE runtime linkage for Autonomous Companies tasks and operators.
+- Codex, Hermes, ACE, Nango, and MarkItDown adapter readiness reporting.
+- Recommendation heartbeat scheduler and launch drill scheduler controls.
+- Launch runbook, launch actions, execution audit, evidence package, deployment preflight, deployment manifest, release candidate gate, launch drills, launch validation, validation history, launch audit export, production health, and production smoke checks.
+
+The remaining work before production completion is environment validation: run the contracts against the deployed database, set and verify live credentials, execute browser-level UI smoke testing, and confirm the live Nango/Hermes/ACE paths in the target deployment.
+
 ## High-Level Architecture
 
 | Layer | Purpose |
@@ -201,6 +215,33 @@ GET  /security/audit
 GET  /security/policies
 ```
 
+## Implemented Launch Control API
+
+The current build adds a production launch-control surface under:
+
+```http
+GET  /api/v1/conscious-harness/health
+GET  /api/v1/conscious-harness/health/smoke
+GET  /api/v1/conscious-harness/readiness
+GET  /api/v1/conscious-harness/launch/runbook
+GET  /api/v1/conscious-harness/launch/evidence
+GET  /api/v1/conscious-harness/launch/preflight
+POST /api/v1/conscious-harness/launch/preflight/actions/execute
+GET  /api/v1/conscious-harness/launch/manifest
+GET  /api/v1/conscious-harness/launch/release-candidate
+GET  /api/v1/conscious-harness/launch/drills
+POST /api/v1/conscious-harness/launch/drills
+GET  /api/v1/conscious-harness/launch/drills/scheduler/status
+POST /api/v1/conscious-harness/launch/drills/scheduler/config
+GET  /api/v1/conscious-harness/launch/validation
+POST /api/v1/conscious-harness/launch/validation
+GET  /api/v1/conscious-harness/launch/validations
+GET  /api/v1/conscious-harness/launch/audit-package
+GET  /api/v1/conscious-harness/launch/adapters
+POST /api/v1/conscious-harness/launch/adapters/smoke-tests
+GET  /api/v1/conscious-harness/launch/adapters/smoke-tests
+```
+
 ## Conscious Home Folder
 
 CAIRO introduces a transparent local operational filesystem:
@@ -273,4 +314,3 @@ Distribution channels include GitHub, Hugging Face, OpenRouter, AI communities, 
 - `index.html` - GitHub Pages site.
 - `styles.css` - Responsive visual system for the public page.
 - `script.js` - Lightweight animated runtime telemetry for the architecture visual.
-

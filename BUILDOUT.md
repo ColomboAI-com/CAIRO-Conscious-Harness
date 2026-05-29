@@ -399,6 +399,14 @@ Implemented forty-sixth production smoke snapshot slice:
 - Command Center Production Health now exposes Run Smoke and displays the latest smoke status, pass count, release verdict, and audit package id.
 - Added backend service coverage for production smoke snapshots.
 
+Implemented forty-seventh public documentation refresh slice:
+
+- Updated the README with current build status, implemented launch-control surfaces, production health, smoke checks, validation history, and audit export.
+- Added the implemented launch-control API map to the README.
+- Updated the GitHub Pages site navigation with a Status section.
+- Added public status cards for built launch control, production health, operational adapters, and remaining environment validation.
+- Expanded the public services grid with Launch Control and Adapter Readiness APIs.
+
 ## Swarm Findings
 
 ### Frontend
