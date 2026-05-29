@@ -366,6 +366,15 @@ Implemented forty-second end-to-end launch validation slice:
 - Command Center Release Candidate Gate now exposes Validate Launch and displays decision, blocker count, adapter readiness, and smoke-test count.
 - Added backend service coverage for fresh validation and latest-drill validation snapshots.
 
+Implemented forty-third launch validation audit-history slice:
+
+- Added persistent `ch_launch_validations` records for launch validation decisions.
+- Added `GET /api/v1/conscious-harness/launch/validations` for recent validation history.
+- Validation reports now persist decision, status, drill linkage, release candidate linkage, evidence linkage, blocker count, warning count, and full report JSON.
+- Deployment preflight now tracks the `054_conscious_harness_launch_validations` migration requirement.
+- Command Center Release Candidate Gate now shows recent validation history cards with decision, blockers, warnings, drill linkage, and timestamp.
+- Added backend service coverage for persisted launch validation history across service restarts.
+
 ## Swarm Findings
 
 ### Frontend
